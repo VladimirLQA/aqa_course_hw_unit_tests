@@ -4,3 +4,7 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+let num = 3
+let = resultString = num + +(String(num) + num) + +(String(num) + num + num)
+console.log(resultString)
