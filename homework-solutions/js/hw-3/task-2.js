@@ -4,3 +4,9 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 
 */
+
+function summator(number) {
+
+    console.log(number + String(number+number) + String(number+number+number))
+}
+summator(3);
