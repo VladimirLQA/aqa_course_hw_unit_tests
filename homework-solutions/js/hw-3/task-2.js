@@ -3,12 +3,11 @@
 n + nn + nnn, где n не перемножаются, а конкатенируются
 */
  let a = 5;
- let modifiedTypea = Number(a)
- console.log(modifiedTypea)
+ console.log(a)
  let b = String(a) + a;
  let modifiedTypeb = Number(b)
  console.log(modifiedTypeb)
  let c = String(a) + a + a;
  let modifiedTypec = Number(c)
  console.log(modifiedTypec)
- console.log (modifiedTypea + modifiedTypeb + modifiedTypec)
+ console.log (a + modifiedTypeb + modifiedTypec)
