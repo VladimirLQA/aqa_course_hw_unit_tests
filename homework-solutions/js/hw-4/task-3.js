@@ -6,6 +6,7 @@
   преобразовываясь в number
 
 */
+'use strict';
 
 let minAge = 18;
 let maxAge = 60;
