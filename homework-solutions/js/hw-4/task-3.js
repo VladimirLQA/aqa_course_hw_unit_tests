@@ -13,7 +13,7 @@ let maxAge = 60;
 let age = '10a';
 age = Number(age);
 
-if (typeof age !== 'number' || age !== age) {
+if (isNaN(age)) {
   console.log('Incorrect data type');
 } else {
   if (age < minAge) {
