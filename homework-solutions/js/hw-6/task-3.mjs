@@ -13,9 +13,6 @@ for (const number of numbers) {
   if (!unique.includes(number)) {
     unique.push(number);
   }
-  else {
-    continue;
-  }
 }
 console.log(unique);
 
