@@ -10,15 +10,12 @@
 
 const forOf = [];
 const arr1 = [1,2,3,4,5,6,7,8,9,10];
-let i = 0;
 for (const element of arr1) {  
   if (element % 2 === 0) {
-    forOf[i] = element ** 2;
+    forOf.push(element ** 2);
+  } else {
+    forOf.push(element ** 3);
   }
-  else {
-    forOf[i] = element ** 3;
-  }
-  i++;
 }
 console.log(forOf);
 
