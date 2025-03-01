@@ -21,7 +21,7 @@ numbers.forEach((element) => {
   }
 });
 
-const map = numbers.map((element) => element - numbers.length);
+const map = numbers.map((element, index, array) => element - array.length);
 
 const filter = numbers.filter((element, index, array) => element > array[index - 1]);
 
