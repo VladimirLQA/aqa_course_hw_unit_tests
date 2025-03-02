@@ -11,7 +11,7 @@ function findMissingNumber(numbers) {
   if (numbers.at(-1) !== numbers.length){
     return numbers.find((value, index) => value !== index + 1) - 1;
   }
-  else return numbers.sort((a,b) => a - b).at(-1)+1;
+  else return numbers.at(-1) + 1;
 }
 const arr1 = [5,2,7,3,8,1,6];
 const arr2 = [1,2,3,4];
