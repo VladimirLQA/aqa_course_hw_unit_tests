@@ -20,8 +20,7 @@ const words = [
 
 function sortedByVowels(wordsArr = []) {
   let result = [...wordsArr];
-  console.log(result);
-  result.sort((a, b) => a.match(/[aeiouy]/g).join('').length - b.match(/[aeiouy]/g).join('').length);
+  result.sort((a, b) => a.match(/[aeiouy]/g).length - b.match(/[aeiouy]/g).length);
   return result;
 }
 console.log(sortedByVowels(words))      

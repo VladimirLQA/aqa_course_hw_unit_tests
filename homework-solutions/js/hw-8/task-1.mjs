@@ -34,8 +34,4 @@ some = numbers.some((value) => value > 90);
 every = numbers.every((value) => (value + '').length === 2);
 console.log(`forEach - ${forEach} \n map - ${map} \n filter - ${filter} \n find - ${find} \n sort - ${sort} \n reduce - ${reduce} \n some - ${some} \n every - ${every}`);
 
-
-
-
-
 export { forEach, map, filter, find, sort, reduce, some, every };
