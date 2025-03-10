@@ -7,7 +7,8 @@
 */
 
 function mergeArrays(...arrays) {
-  return arrays.flat().filter((item) => typeof item === 'number'); // Ваш код
+  // Ваш код
+  return arrays.flat();
 }
 /*
   2. Devide by _
@@ -18,6 +19,22 @@ function mergeArrays(...arrays) {
 function devideBy(sentence) {
   return sentence.charAt(0).toUpperCase() + sentence.slice(1).replace(/ /g, '_');
   // Ваш код
+  // Убираем лишние пробелы и разделяем строку на слова
+  const words = sentence.trim().split(/\s+/);
+
+  // Если строка пустая, сразу возвращаем пустую строку
+  if (words.length === 0) return '';
+
+  // Первое слово с маленькой буквы
+  let result = [words[0].toLowerCase()];
+
+  // Все остальные слова с заглавной буквы
+  for (let i = 1; i < words.length; i++) {
+    result.push(words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase());
+  }
+
+  // Собираем строку с подчеркиваниями между словами
+  return result.join('_');
 }
 console.log(devideBy('I am super engineer'));
 /*
@@ -32,10 +49,17 @@ F(n) = F(n-1) + F(n-2) для n ≥ 2
   */
 function fibonacci(n) {
   // Ваш код
-  if (n <= 1) {
-    return n; // Базовый случай: F(0) = 0, F(1) = 1
+  // Если n меньше 2, то возвращаем n (0 или 1)
+  if (n < 2) return n;
+
+  let a = 0,
+    b = 1;
+  for (let i = 2; i <= n; i++) {
+    let temp = a + b;
+    a = b;
+    b = temp;
   }
-  return fibonacci(n - 1) + fibonacci(n - 2); // Рекурсивный вызов
+  return b; // Возвращаем n-е число Фибоначчи
 }
 
 console.log(fibonacci(6)); // 8 (для F(6))

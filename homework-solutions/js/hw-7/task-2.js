@@ -7,6 +7,16 @@
   const newWord = word.split('').reverse().join('');
   return word === newWord;
   // Ваш код
+  // Проверяем, что вход - это строка
+  if (typeof word !== 'string') {
+    return false;
+  }
+
+  // Приводим строку к нижнему регистру и убираем пробелы
+  word = word.toLowerCase().replace(/\s/g, '');
+
+  // Сравниваем слово с его перевёрнутой версией
+  return word === word.split('').reverse().join('');
 }
 */
 function isPalindrom(word) {
@@ -49,32 +59,34 @@ function isPalindrom(word) {
 }
  */
 function findLongestWords(sentence) {
-  // Проверяем, что передан строковый параметр
+  // Ваш код
   if (typeof sentence !== 'string') {
-    return []; // Вместо ошибки возвращаем пустой массив
-  }
-
-  // Убираем лишние пробелы в начале и в конце строки, а затем разбиваем строку на массив слов
-  const words = sentence.trim().split(' ');
-
-  // Если строка пуста, возвращаем пустой массив
-  if (words.length === 1 && words[0] === '') {
     return [];
   }
+
+  // Если строка пуста, возвращаем пустой массив
+  if (sentence.trim() === '') {
+    return [];
+  }
+
+  // Разделяем предложение на слова
+  const words = sentence.split(' ');
 
   let maxLength = 0;
   let longestWords = [];
 
-  // Проходим по каждому слову в массиве
+  // Проходим по каждому слову
   for (let i = 0; i < words.length; i++) {
-    // Если текущая длина слова больше максимальной, обновляем maxLength и longestWords
-    if (words[i].length > maxLength) {
-      maxLength = words[i].length;
-      longestWords = [words[i]]; // Создаем новый массив с единственным длинным словом
+    const wordLength = words[i].length;
+
+    // Если текущее слово длиннее найденного максимума
+    if (wordLength > maxLength) {
+      maxLength = wordLength; // Обновляем максимальную длину
+      longestWords = [words[i]]; // Начинаем новый список с текущим словом
     }
-    // Если длина слова равна максимальной, добавляем его в массив longestWords
-    else if (words[i].length === maxLength) {
-      longestWords.push(words[i]);
+    // Если длина текущего слова равна максимальной длине
+    else if (wordLength === maxLength) {
+      longestWords.push(words[i]); // Добавляем текущее слово в список
     }
   }
 
