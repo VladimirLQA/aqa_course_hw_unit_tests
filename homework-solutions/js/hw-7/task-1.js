@@ -17,7 +17,6 @@ function mergeArrays(...arrays) {
     - Пример: I am super engineer => i_Am_Super_Engineer
   */
 function devideBy(sentence) {
-  return sentence.charAt(0).toUpperCase() + sentence.slice(1).replace(/ /g, '_');
   // Ваш код
   // Убираем лишние пробелы и разделяем строку на слова
   const words = sentence.trim().split(/\s+/);
