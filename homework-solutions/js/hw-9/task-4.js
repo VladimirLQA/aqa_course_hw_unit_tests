@@ -39,7 +39,7 @@ function strCount(obj) {
       continue;
     }
     if(typeof element === "object" && !Array.isArray(element) && element !== null) {
-      arrValues.push(Object.values(element))
+      arrValues.unshift(Object.values(element))
     }
   }
   return counter;
