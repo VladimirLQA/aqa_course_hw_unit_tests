@@ -20,7 +20,7 @@ function getRandomArbitrary(min, max) {
 }
 
 function uniqueRandomGenerator(n) {
-  let numbers = []
+  const numbers = []
   while(numbers.length !== n) {
     let number = getRandomArbitrary(1, n)
     if(numbers.includes(number)) {
